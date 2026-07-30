@@ -51,7 +51,7 @@ I will attempt to 3D print the pieces next time to evaluate them physically.
 
 ---
 
-## Log 3: July 28-29, 2026 - CAD Part 2 - 5 hours
+## Log 3: July 28-29, 2026 - CAD Part 2 - 5.6 hours
 Timelapse <a href="https://lapse.hackclub.com/timelapse/_uOzVr4UmdGI">link</a>.
 
 After finding a Hosyond 5 inch DSI display, I felt motivated to adapt my design to offer a more sleek appearance.
