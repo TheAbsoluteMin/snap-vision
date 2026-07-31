@@ -118,6 +118,8 @@ I relied a lot on standard API code, and used a lot of place holder values as I 
 
 <img width="632" height="54" alt="image" src="https://github.com/user-attachments/assets/6654493b-980e-420c-bdcb-314c598263cf" />
 
+<img width="2526" height="1407" alt="Screenshot 2026-07-30 013415" src="https://github.com/user-attachments/assets/0efc9ea8-ce6e-41dc-8adc-e0ff5a8fa295" />
+
 When I finally was able to test and integrate the code with Ryan's, I found out quickly that it did not work... Then, I realized that I would have to read the Open Scan API Github and source code later!
 
 After spending quite some time laser cutting and reprinting many parts due to inaccurate measurements and dimensions, my friend and I finally began on assembling the model! The box is mainly made up of laser-cut pieces, while pieces like the plane and walls that the camera views were 3D printed in gray to provide contrast when the API scans the pictures.
