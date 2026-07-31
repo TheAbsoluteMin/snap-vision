@@ -91,3 +91,59 @@ Today, SnapVision welcomed a new collaborator and friend, Ryan. During the final
 I have begun laser cutting some of the sides and 3D printing some of the mechanical parts. I hope to finish assembling the project tomorrow!
 
 ---
+
+## Log 4: July 29-30, 2026 - Coding and Assembly - 3 hours
+Assembly Timelapse <a href="https://lapse.hackclub.com/timelapse/1YW8Dd9PgHda">link</a>.
+Coding hours tracked on Hackatime.
+
+After Ryan calibrated and tested the code that rotated and captured pictures with the camera and motor, I worked on writing the code to send those pictures to the Open Scan API.
+
+Here is what Ryan's code looked like:
+
+<img width="2120" height="1211" alt="image" src="https://github.com/user-attachments/assets/66d3e2ca-49dc-4f5d-8e96-162b02357470" />
+
+He adjusted the code so that the firmware dynamically adjusted to users' choice of the number of pictures, which determined the angle step required to rotate the platter.
+
+<img width="1049" height="618" alt="image" src="https://github.com/user-attachments/assets/8f43bf1b-df63-487a-9171-5c9bdd7b39bb" />
+
+After calibrating the camera resolution and settings, he was able to allow the camera to capture quality pictures.
+
+<img width="1630" height="1030" alt="image" src="https://github.com/user-attachments/assets/302f1cbf-361b-4bdf-b29b-246e32faa767" />
+
+I had to learn how to use API code, and I quickly found it challenging.
+
+I relied a lot on standard API code, and used a lot of place holder values as I did not have access to the Raspberry Pi 4 at that time.
+
+<img width="968" height="382" alt="image" src="https://github.com/user-attachments/assets/feaf8269-c7b3-4934-b292-5e15f475f581" />
+
+<img width="632" height="54" alt="image" src="https://github.com/user-attachments/assets/6654493b-980e-420c-bdcb-314c598263cf" />
+
+When I finally was able to test and integrate the code with Ryan's, I found out quickly that it did not work... Then, I realized that I would have to read the Open Scan API Github and source code later!
+
+After spending quite some time laser cutting and reprinting many parts due to inaccurate measurements and dimensions, my friend and I finally began on assembling the model! The box is mainly made up of laser-cut pieces, while pieces like the plane and walls that the camera views were 3D printed in gray to provide contrast when the API scans the pictures.
+
+<img width="3000" height="4000" alt="20260729_163449" src="https://github.com/user-attachments/assets/0319233d-a65a-41ab-9596-2e115999b932" />
+
+I had originally planned a sliding mechanism with a distance sensor that would move the camera with respect to the object on the platter, but after the coding tests, Ryan and I agreed that it was not necessary.
+
+Also, I wanted the top clear case to be made out of frosted acrylic, but I later realized that Tufts program did not have any, so I used clear acrylic instead. 
+
+<img width="4000" height="3000" alt="20260730_135755" src="https://github.com/user-attachments/assets/169769e7-8530-4672-bd44-f4126268e8fc" />
+
+The bottom base box has two layers for structural stability, with black matte acrylic material supported by birch wood. An interesting obstacle I faced when printing these layers included the high amount of time the laser cutter required to print tiny grills!
+
+<img width="4000" height="3000" alt="20260730_130937" src="https://github.com/user-attachments/assets/8efab011-1e39-4e64-88a1-4e5df8d839fc" />
+<img width="3000" height="4000" alt="20260730_135745" src="https://github.com/user-attachments/assets/84bcfbde-aa48-447d-b10c-70a9f5a11982" />
+<img width="1180" height="664" alt="image" src="https://github.com/user-attachments/assets/b0f28087-5196-4a2f-9eb8-e7a5cffcaeb8" />
+
+With a lot of hot glue, Ryan and I were able to put together a nice case with a sleek touchscreen display!
+
+<img width="4000" height="3000" alt="20260730_135735" src="https://github.com/user-attachments/assets/fe0401b6-d52d-4fad-8b8d-6661b289787c" />
+<img width="3000" height="4000" alt="20260730_172717" src="https://github.com/user-attachments/assets/df00a238-f648-4634-aba8-14078497642d" />
+<img width="3000" height="4000" alt="20260730_183625" src="https://github.com/user-attachments/assets/9b4831cc-2c98-4a73-86ef-7e96d9e174bd" />
+<img width="3000" height="4000" alt="20260730_183635" src="https://github.com/user-attachments/assets/e05d18f4-eb5c-4c88-a2cf-93b5f4c3a4ba" />
+
+### Future work:
+I hope to soon write a polished and fully complete firmware for my project as the Tufts program is ending on July 31, 2026, so Ryan will no longer be able to help me with the project and coding. However, I hope I can finished it!
+
+---
