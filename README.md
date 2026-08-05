@@ -92,3 +92,22 @@ Congrats! Now you can code wirelessly in Jupyter Labs!
 
 ## Execute code
 
+> sudo apt update
+
+> sudo apt update && sudo apt install -y python3-picamera2
+
+> sudo apt update && sudo apt install -y swig
+
+> sudo apt update && sudo apt install -y liblgpio-dev
+
+> ~/.venv/robotics/bin/pip install jupyterlab mr-gopigo3 opencv-python adafruit-circuitpython-dotstar
+
+now do
+
+> nano ~/.venv/robotics/pyvenv.cfg
+
+and change false in "include-system-site-packages = false"
+<img width="1331" height="219" alt="image" src="https://github.com/user-attachments/assets/c68a1370-9dcb-429e-a3cc-5ff22f8054e0" />
+to true
+<img width="1365" height="290" alt="image" src="https://github.com/user-attachments/assets/adfc8d73-ef69-4573-b3e0-a38f5778d8db" />
+then hit Ctrl+O, Enter key, and Ctrl+X to save and exit.
