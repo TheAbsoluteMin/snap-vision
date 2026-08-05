@@ -149,3 +149,63 @@ With a lot of hot glue, Ryan and I were able to put together a nice case with a 
 I hope to soon write a polished and fully complete firmware for my project as the Tufts program is ending on July 31, 2026, so Ryan will no longer be able to help me with the project and coding. However, I hope I can finished it!
 
 ---
+
+## Log 5: August 4, 2026 - Raspberry Pi 4 Setup and Firmware - 6 hours
+Timelapse <a href="https://lapse.hackclub.com/timelapse/Z6yoEgbLf6Xv">link</a>.
+
+Wow, do I have a story to tell you! I was experimenting with the DSI display screen, and I wondered if I could display CAD files! Thus, I tried to run the lightweight F3D, a 3D viewer application, to display a simple .obj file.
+
+<img width="875" height="449" alt="image" src="https://github.com/user-attachments/assets/a05462f7-84c9-4a68-9406-5fae8c3d7b07" />
+
+However, I got the following error:
+
+<img width="987" height="150" alt="image" src="https://github.com/user-attachments/assets/f8bdee08-88d3-489d-90e4-f28f6c283a9d" />
+
+Apparently, my display screen did not have access, so I searched up a solution and found this code command:
+> subprocess.run(["xhost", "+local:"])
+
+However, it did not work still, so with further research, I came to the conclusion that it needed the Raspberry Pi 4 to run on X11 rather than the wayland session, so I tried to change that with some Pi terminal commands.
+
+Long story short, it was not successful!
+
+I tried to adjust the settings in the configuration tool, but the F3D viewer still did not run.
+
+<img width="997" height="221" alt="image" src="https://github.com/user-attachments/assets/33c55219-71ad-4eed-ab20-e1e91dd86b8e" />
+
+I tried to edit lightdm's session settings to default to X11, but that only gave me more errors! After rebooting the Pi 4, my display screen showed a really worrying page.
+
+<img width="1087" height="534" alt="image" src="https://github.com/user-attachments/assets/9ae05675-d9fc-4341-9537-bd68e7b8cd10" />
+
+I was locked out of my virtual desktop! However, I was fortunate that the Jupyter Labs web server that the Tufts University program had installed still worked, so I opened a the Pi terminal from there! After reopening the lightdm settings, I realized that the Pi 4 had other settings that locked it in the Wayland session that I had missed and not changed. Thus, as the Pi 4 was in a conflicting state, I attempted to undo my work, but each terminal command and file edit seemed to make it worse, until I was not sure what I had done... I tried to reinstall the old packages for Wayland that I had accidentally deleted, and it did not work.
+
+<img width="1227" height="1293" alt="image" src="https://github.com/user-attachments/assets/61cbdcf6-df58-4dc5-a602-e1680629fae7" />
+
+Files seemed missing and corrupted, and each command I typed may have actually made my situation worse rather than fix the problem. 
+<img width="1124" height="567" alt="image" src="https://github.com/user-attachments/assets/e19c96c5-8077-4813-9eb8-395de9e86031" />
+<img width="1018" height="551" alt="image" src="https://github.com/user-attachments/assets/e064c25e-86bf-46c9-b67e-83a297568243" />
+
+Thus, I finally decided to start anew and flash a brand new Pi OS. It was a difficult decision as that would mean the software and tutorials implemented by the Tufts University program would be erased, but I really wanted a working display screen! Flashing the new Pi OS was challenging as I did not have an SD card reader. With some reading, I found a way to flash the software onto a USB drive, which could be plugged into the Pi to start it. Then, I could use Raspberry Pi Imager to flash the cleaned micro SD card with the clean software! 
+
+It took a few tries to flash the large software onto the USB drive since initially, the balenaEtcher software threw errors at the end after taking a long time to execute the flash!
+
+<img width="2559" height="1445" alt="image" src="https://github.com/user-attachments/assets/5e5241d9-4cea-426e-afd9-0fa237d341d8" />
+
+Then, I switched to the Rufus software, and it finally worked!
+
+<img width="876" height="1026" alt="image" src="https://github.com/user-attachments/assets/a1557c41-04d4-4e79-a98d-1a7241a7e48d" />
+
+The Pi 4 read the USB drive, and I was able to set up my preferences and flash the micro SD card with the clean Pi OS!
+
+After all that painful work, I installed the GoPiGo3 and Jupyter Lab softwares again, so I could keep the same quick workflow where I could instantly test and run code. I ran into some errors with the GoPiGo3 software as it seemed to have needed other libraries like swig to help install and compile it.
+
+<img width="1446" height="678" alt="image" src="https://github.com/user-attachments/assets/11968992-e7fa-4ccd-9388-0c31ecccd153" />
+<img width="1880" height="1002" alt="image" src="https://github.com/user-attachments/assets/ff6572b8-a33c-4f53-a359-eb55e01197b2" />
+
+After setting up the Jupyter Lab web server, I could finally begin coding. Of course, the code no longer natively worked in this new environment since I no longer had my program's software and libraries! Thus, I had to update the code so that it would work with standard libraries. The camera was especially difficult to reconfigure correctly so that it still took sharp images!
+
+<img width="1113" height="442" alt="image" src="https://github.com/user-attachments/assets/e36530b8-721a-407c-a190-e209afd3d0c1" />
+
+### Future work:
+I began to adapt the Open Scan API's example code, and I hope to continue to integrate the API automation code into my project next time!
+
+---
