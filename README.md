@@ -38,23 +38,27 @@ and unplug the USB flash drive and USB-C charger cable. You can now plug in powe
 
 ## Install GoPiGo3
 In the Pi terminal, type the commands:
-> python3 -m venv ~/.venv/gopigo3
 
-> ~/.venv/gopigo3/bin/pip install mr-gopigo3
+> mkdir -p ~/.venv && python3 -m venv ~/.venv/robotics
 
-> source ~/.venv/gopigo3/lib/python3.*/site-packages/gopigo3/scripts/install_trixie.sh
+> ~/.venv/robotics/bin/pip install mr-gopigo3
+
+> source ~/.venv/robotics/lib/python3.*/site-packages/gopigo3/scripts/install_trixie.sh
 
 ## Optional: Install Jupyter Lab for coding
 In the Pi terminal, type the commands:
-> mkdir -p ~/.venv && python3 -m venv ~/.venv/robotics
 
-> ~/.venv/robotics/bin/pip install jupyterlab mr-gopigo3
+> ~/.venv/robotics/bin/pip install jupyterlab
 
 > ~/.venv/robotics/bin/jupyter lab --ip=0.0.0.0 --no-browser
 
 The latter starts the web server broadcast. In order to open it up, you can type the access and token link displayed on the Pi terminal.
 
-To have the server run in the background every time, create an automation file in the Pi terminal with the command "sudo nano /etc/systemd/system/jupyter.service". Type the following setup text inside: 
+To have the server run in the background every time, create an automation file in the Pi terminal with the command:
+> sudo nano /etc/systemd/system/jupyter.service
+
+Then, type the following setup text inside: 
+
 > [Unit]
 
 > Description=Jupyter Lab Robot Server
