@@ -1,5 +1,5 @@
 # SnapVision
-<img width="999" height="1088" alt="image" src="https://github.com/user-attachments/assets/32996242-de71-4023-9cbc-3928e8e9e5ae" />
+<img width="943" height="1008" alt="image" src="https://github.com/user-attachments/assets/c22eac14-78e4-4742-8dde-7bda896df4fd" />
 
 ## Inspiration
 Designing cases or models for real world parts through CAD can be difficult without exact measurements and dimensions. Obtaining such measurements and replicating intricate designs on some objects and electronic modules can also be tedious. Thus, I decided to build an automated 3D scanner that uses photogrammetry. With custom firmware and access to Open Scan API, the 3D scanning process is hands-free and streamlined after the initial run of the firmware. I hope this project can potentially expedite the engineering and design processes.
