@@ -13,7 +13,7 @@ You can view the 3D model here: https://cad.onshape.com/documents/4bb380a378ec8b
 1. [Set up hardware](https://github.com/TheAbsoluteMin/snap-vision/blob/main/docs/Hardware_Setup.md)
 2. [Install Pi OS](https://github.com/TheAbsoluteMin/snap-vision/blob/main/docs/Raspberry_Pi_OS_Setup.md)
 3. [Install firmware](https://github.com/TheAbsoluteMin/snap-vision/blob/main/docs/Firmware_Installations.md)
-4. [Build case](https://github.com/TheAbsoluteMin/snap-vision/blob/main/docs/Case_Assembly)
+4. [Full Assembly](https://github.com/TheAbsoluteMin/snap-vision/blob/main/docs/Full_Assembly.md)
 
 ## Materials
 
