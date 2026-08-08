@@ -58,6 +58,8 @@ Congrats! Now you can code wirelessly in Jupyter Lab!
 
 Type the following commands in the Pi terminal:
 
+> sudo apt update && sudo apt install f3d -y
+
 > sudo apt update && sudo apt install -y python3-picamera2
 
 > sudo apt update && sudo apt install -y swig
