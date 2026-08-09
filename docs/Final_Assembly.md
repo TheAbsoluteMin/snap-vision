@@ -1,4 +1,4 @@
-# Full Assembly
+# Final Assembly
 
 View the 3D model here: https://cad.onshape.com/documents/4bb380a378ec8b5d44400d73/w/f93c1e6eb205d04d3b317060/e/29820a57393d4c7f3e63d056?renderMode=0&uiState=6a73d71636d5df3b8f23e703
 
