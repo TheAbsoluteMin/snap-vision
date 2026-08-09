@@ -80,4 +80,4 @@ then hit Ctrl+O, Enter key, and Ctrl+X to save and exit.
 
 ## Flash main firmware
 
-If you are coding in Jupyter Lab, you can run the code directly on its web server. If you want to flash scan.py, follow the following instructions:
+If you are coding in Jupyter Lab, you can run the code directly on its web server. Otherwise, you can download scan.py onto your Pi 4 from [here](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py).
