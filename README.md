@@ -1,11 +1,25 @@
 # SnapVision
+Automated 3D scanner utilizing photogrammetry.
+
 <img width="943" height="1008" alt="image" src="https://github.com/user-attachments/assets/c22eac14-78e4-4742-8dde-7bda896df4fd" />
+
+## See it
+Demonstration link.
+
+3D model [link](https://cad.onshape.com/documents/4bb380a378ec8b5d44400d73/w/f93c1e6eb205d04d3b317060/e/29820a57393d4c7f3e63d056?renderMode=0&uiState=6a73d4c936d5df3b8f23dfd1).
 
 ## Inspiration
 Designing cases or models for real world parts through CAD can be difficult without exact measurements and dimensions. Obtaining such measurements and replicating intricate designs on some objects and electronic modules can also be tedious. Thus, I decided to build an automated 3D scanner that uses photogrammetry. With custom firmware and access to Open Scan API, the 3D scanning process is hands-free and streamlined after the initial run of the firmware. I hope this project can potentially expedite the engineering and design processes.
 
 ## Features
-
+* High resolution camera
+* Interactive display screen
+* Portable, sleek case design
+* Heat escape grills
+* Internal LEDs
+* Powerful yet stable motor
+* Fully integrated and automated API processing
+* Real-time feedback during use
 
 ## How to use
 1. Make sure SnapVision is in a well-lit place.
@@ -15,17 +29,62 @@ Designing cases or models for real world parts through CAD can be difficult with
 5. Watch SnapVision take photos, and wait until SnapVision finishes processing them with the Open Scan API.
 6. Wait for a success message and a 3D model preview of your completed scan!
 
+## How it works
+1. Scanning
+    1. Take a photo of the object
+    2. Rotate object
+    3. Repeat
 
-You can view the 3D model here: https://cad.onshape.com/documents/4bb380a378ec8b5d44400d73/w/f93c1e6eb205d04d3b317060/e/29820a57393d4c7f3e63d056?renderMode=0&uiState=6a73d4c936d5df3b8f23dfd1.
+2. Send images to API
+    1. Verify API token
+    2. Check photo data requirements
+    3. Compress images in ZIP file(s)
+    4. Send images
+
+3. Extract the 3D model from API
+    1. Check API processing status every 30 seconds
+        1. If success:
+            1. Get downloadable Dropbox link
+            2. Download ZIP file
+            3. Find .obj 3D model file
+            4. Show 3D model on display screen
+        2. If failure:
+            1. Try again
+
+## BOM
+???
 
 ## Full assembly
 ### A. Set up hardware
 1. Connect the Pi Camera Model 3 to the Raspberry Pi 4 with an FFC ribbon cable with the cable clips. Make sure you connect to the Pi 4's "CAMERA" cable clip.
+
+<img width="4000" height="3000" alt="20260804_204716" src="https://github.com/user-attachments/assets/381037ac-3754-493a-809b-afdb01468161" />
+
 2. Connect the Hosyond DSI Display to the Raspberry Pi 4 with another FFC ribbon cable with the cable clips. Make sure you connect to the Pi 4's "DISPLAY" cable clip.
-3. Attach the Dexter GoPiGo3 red board on top of the Raspberry Pi 4 with the screws and their standoffs.
-4. Connect the DC motor with rotary magnetic encoder to the Dexter GoPiGo3 red board with the JST connector wires. Make sure you connect to the left JST connector port on the red board.
-5. Attach the LED strip to the jumper wires (for extension) and wire them to the red board as shown below.
-6. After following the Raspberry Pi 4 set up below, the battery pack can be connected to the red board's barrel jack. Remember, when powering on, always turn on the battery pack into the barrel jack before pressing the power button on the red board to start up the Pi 4. When turning off, press the power button on the red board before turning off the battery pack.
+
+<img width="4000" height="3000" alt="20260804_204956" src="https://github.com/user-attachments/assets/3fa1609b-91fe-41a6-bacd-666f98deb2d2" />
+
+3. Attach the screws and standoffs on the Raspberry Pi 4.
+
+<img width="4000" height="3000" alt="20260804_205245" src="https://github.com/user-attachments/assets/7755ed67-b9b2-4b3c-b356-519e30494b26" />
+
+4. Attach the Dexter GoPiGo3 red board on top of the Raspberry Pi 4.
+
+<img width="4000" height="3000" alt="20260804_210240" src="https://github.com/user-attachments/assets/987d4db3-8e7c-475a-8b28-80f536ea9dee" />
+
+5. Connect the DC motor with rotary magnetic encoder to the Dexter GoPiGo3 red board with the JST connector wires. Make sure you connect to the left JST connector port on the red board.
+
+<img width="4000" height="3000" alt="20260804_210528" src="https://github.com/user-attachments/assets/67edb018-2529-4ea9-9e3a-b253c5840b9b" />
+
+6. Attach the LED strip to the jumper wires (for extension) and wire them to the red board as shown below.
+
+<img width="4000" height="3000" alt="20260804_210837" src="https://github.com/user-attachments/assets/394d5883-8881-4f51-a06f-2b0aebbf04d3" />
+<img width="4000" height="3000" alt="20260804_211317" src="https://github.com/user-attachments/assets/f1dca5d1-d022-46e4-8532-7929ee5d0b6e" />
+<img width="4000" height="3000" alt="20260804_211240" src="https://github.com/user-attachments/assets/5e4ee197-9d9a-4268-9efa-a984c8d34416" />
+
+7. After following the Raspberry Pi 4 set up below, the battery pack can be connected to the red board's barrel jack. Remember, when powering on, always turn on the battery pack into the barrel jack before pressing the power button on the red board to start up the Pi 4. When turning off, press the power button on the red board before turning off the battery pack.
+
+<img width="4000" height="3000" alt="20260804_211535" src="https://github.com/user-attachments/assets/20380dc7-73e5-43d9-8e6e-ca4aca090e2e" />
 
 ### B. Install Pi OS
 If you already have Pi OS installed on your Raspberry Pi 4, you can skip this step. For more help, visit this [guide](https://github.com/TheAbsoluteMin/snap-vision/blob/main/docs/Raspberry_Pi_OS_Setup.md).
@@ -142,25 +201,16 @@ However, you are able to 3D print everything.
 <img width="1610" height="1001" alt="image" src="https://github.com/user-attachments/assets/4e793b8e-5100-4a39-8d5a-f01efeac41da" />
 6. Hot glue the motor support in the 7th rectangular hole from the bottom in the bottom case's sides.
 <img width="1507" height="1025" alt="image" src="https://github.com/user-attachments/assets/2da6011c-9864-4ecb-af3d-472449a7aad0" />
-7. Place all the hardware inside the bottom case.
-???/n
+7. Place all the hardware inside the bottom case, and snap on the back bottom piece. That piece is the door to the power.
+<img width="3000" height="4000" alt="20260804_220028" src="https://github.com/user-attachments/assets/92ae6486-259c-42d3-b483-ebcaec6ce714" />
 8. Attach the platter onto the DC motor.
 <img width="815" height="543" alt="image" src="https://github.com/user-attachments/assets/75814cd8-3ad8-4379-abfb-5f5cbea8ea9d" />
-
 9. Snap on the second floor parts together. Make sure the motor is taped or glued to the motor support.
 <img width="1315" height="800" alt="image" src="https://github.com/user-attachments/assets/6f67ca96-82e8-4fd8-92d6-3cfabb4b8481" />
 10. Put together the camera using the Dexter camera mount.
-???
-11. Snap on the top case and top lid onto the second floor.
-???
-12. Snap on the back bottom piece. This piece is the door to the power.
-???
-13. Snap on the Hosyond DSI display in the front.
-???
-14. Power on the battery, and press the power button on the red board to use. Enjoy!
- 
-
-## Materials
+<img width="4000" height="3000" alt="20260804_220932" src="https://github.com/user-attachments/assets/1c4bfe47-5ad9-4101-b1b5-119832436e63" />
+11. Snap on the top case and top lid onto the second floor, and attach the Hosyond DSI display in the front.
+<img width="3000" height="4000" alt="20260804_225511" src="https://github.com/user-attachments/assets/9bf2987e-2721-49b7-bb26-1ae16a974a10" />
 
 ## Credits
 Thank you to the following:
