@@ -26,7 +26,7 @@ brightness = 0.05
 lights = dotstar.DotStar(clock_pin, data_pin, num_leds, brightness=brightness, auto_write=False)
 
 #API, variables from Open Scan API example code
-token = "d48c7ddb78b54Xf8ac1734bX9dbd392X"
+token = "REPLACE_WITH_YOUR_TOKEN_HERE" #ask for a token at the official Open Scan API email: cloud@openscan.eu.
 folder = "/home/pi4/Camera/"
 dir_temp = "/home/pi4/temp/"
 zip_scanned = "/home/pi4/Scanned/"
