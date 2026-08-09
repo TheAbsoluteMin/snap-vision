@@ -136,7 +136,7 @@ for i in os.listdir(dir_temp):
     try: os.remove(os.path.join(dir_temp, i))
     except: pass
 
-project_name = f"{object_name}_scan_{int(time.time())}"
+project_name = f"{object_name}_scan_{int(time.time())}.zip"
 file = os.path.join(dir_temp, project_name)
 msg["project"] = project_name
 
