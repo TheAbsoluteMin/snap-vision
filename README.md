@@ -1,7 +1,6 @@
 # SnapVision
 Automated 3D scanner utilizing photogrammetry.
 
-<img width="943" height="1008" alt="image" src="https://github.com/user-attachments/assets/c22eac14-78e4-4742-8dde-7bda896df4fd" />
 
 ## See it in action
 Demonstration link.
@@ -24,12 +23,14 @@ Designing cases or models for real world parts through CAD can be difficult with
     1. Take a photo of the object
     2. Rotate object
     3. Repeat
+<img width="1513" height="535" alt="image" src="https://github.com/user-attachments/assets/c94820a6-6832-42ee-b721-15a2f3c652da" />
 
 2. Send images to API
     1. Verify API token
     2. Check photo data requirements
     3. Compress images in ZIP file(s)
     4. Send images
+<img width="1485" height="531" alt="image" src="https://github.com/user-attachments/assets/75a1adc1-785d-4754-8899-9f642515badf" />
 
 3. Extract the 3D model from API
     1. Check API processing status every 30 seconds
@@ -40,9 +41,10 @@ Designing cases or models for real world parts through CAD can be difficult with
             4. Show 3D model on display screen
         2. If failure:
             1. Try again
+<img width="1333" height="577" alt="image" src="https://github.com/user-attachments/assets/da338e0b-567c-4ece-a90d-a22991215de3" />
 
 ## Hardware
-SnapVision mainly uses components from the GoPiGo3 kit while integrating an external display screen, LEDs, and . The following is a full wiring diagram.
+SnapVision uses some parts from the GoPiGo3 while integrating external components, including the Raspberry Pi 4, LED strip, and Hosyond 5 inch display screen. The following is a full wiring diagram.
 
 
 ## CAD Case
@@ -50,11 +52,18 @@ SnapVision mainly uses components from the GoPiGo3 kit while integrating an exte
 
 The case design evolved heavily from the first design.
 
-Issues with space and hardware integration in the first design called for a remake. The second and final design was inspired by the 3D printer design. 
+<img width="659" height="859" alt="image" src="https://github.com/user-attachments/assets/00fdd98b-a99a-4c53-b9e6-a51178c269a9" />
 
+Issues with space and hardware integration in the first design called for a remake. The second and final design was inspired by the Formlabs 3D printer design. 
+
+<img width="813" height="882" alt="image" src="https://github.com/user-attachments/assets/ecc94b7b-b568-4302-aa3f-bfc5f9a7587c" />
+<img width="943" height="1008" alt="image" src="https://github.com/user-attachments/assets/c22eac14-78e4-4742-8dde-7bda896df4fd" />
 
 ## BOM
-???
+| Part Name | Quantity | Price | Where to Buy |
+| :--- | :---: | :---: | :--- |
+| GoPiGo3 | 1 | $199.00 | [GoPiGo](https://gopigo.io/gopigo/) |
+| Raspberry Pi 4 | 1 | $40.34 | [Vilros](https://vilros.com/products/raspberry-pi-4-model-b-1?src=raspberrypi) |
 
 ## How to use
 1. Make sure SnapVision is in a well-lit place.
@@ -242,6 +251,6 @@ However, you are able to 3D print everything.
 ## Credits
 Thank you to the following:
 - HackClub, for the opportunity and motivation to learn to build hardware projects!
-- Tufts University Engineering Design Lab program, for access to instruction and hardware materials!
+- Tufts University Engineering Design Lab program, for access to instruction and fabrication materials!
 - Ryan, for your support and contributions noted in the [JOURNAL.md](https://github.com/TheAbsoluteMin/snap-vision/blob/main/JOURNAL.md), specifically in the firmware and assembly of SnapVision!
 - Thomas Megel from OpenScanCloud, for access to an API key and his example API code!
