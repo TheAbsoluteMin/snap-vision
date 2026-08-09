@@ -247,3 +247,21 @@ After downloading the Dropbox ZIP file with the firmware, I could extract it to 
 Next time, I will test out the code again to make sure it works, so I can begin finishing up the GitHub repository!
 
 ---
+
+## Log 7: August 9, 2026 - GitHub Work and Code Testing - 3 hours
+
+Today, I extensively worked on putting together the GitHub repository files. Getting all the pictures and files together took quite some time, as I had to disassemble my project and then put it back together step by step in order to include assembly instructions!
+
+<img width="1810" height="1259" alt="image" src="https://github.com/user-attachments/assets/d24500a1-90c1-4e07-8399-41e5d97cec1d" />
+<img width="2013" height="1279" alt="image" src="https://github.com/user-attachments/assets/0943e5f0-d1ef-438e-8f5a-373300ef4d1a" />
+
+Then, I spent an incredibly long amount of time just trying to get one full successful run of the firmware. However, the Open Scan API did not seem to work. There were data transmission errors despite no change of the working code from yesterday!
+
+<img width="1942" height="554" alt="image" src="https://github.com/user-attachments/assets/7bf71871-d9cf-4d36-9abe-d8e596e84b1c" />
+
+As the hours go by, I will keep trying to get the firmware to work again!
+
+### Future work:
+I hope I can finally obtain a working video of SnapVision working!
+
+---
