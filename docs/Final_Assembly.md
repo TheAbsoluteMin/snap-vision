@@ -1,8 +1,12 @@
 # Final Assembly
 
-View the 3D model here: https://cad.onshape.com/documents/4bb380a378ec8b5d44400d73/w/f93c1e6eb205d04d3b317060/e/29820a57393d4c7f3e63d056?renderMode=0&uiState=6a73d71636d5df3b8f23e703
+Important: Please note that this guide assumes the color-coded parts, specifically the laser-cutted and 3D printed ones that were originally used.
 
-Important: Please note that this guide assumes the color-coded parts, specifially the laser-cutted (brown wood and clear and black acrylic) and 3D printed (gray) ones. However, you are able to 3D print everything. 
+Laser-cut parts can be found [here](https://github.com/TheAbsoluteMin/snap-vision/tree/main/CAD/Laser_Cutting). The parts with "Lid" or "Clear" in their name were cut in 3mm thick clear acrylic. The parts with "Internal" were cut in 3mm thick wood. All other laser-cut parts were cut in black acrylic.
+
+3D printed parts can be found [here](https://github.com/TheAbsoluteMin/snap-vision/tree/main/CAD/3D_Printing).
+
+However, you are able to 3D print everything.
 
 1. Hot glue the following pieces together.
 <img width="1180" height="758" alt="image" src="https://github.com/user-attachments/assets/ebd79d18-f341-4367-9850-05ced2f4b634" />
