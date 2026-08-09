@@ -41,7 +41,7 @@ Designing cases or models for real world parts through CAD can be difficult with
             4. Show 3D model on display screen
         2. If failure:
             1. Try again
-<img width="1333" height="577" alt="image" src="https://github.com/user-attachments/assets/da338e0b-567c-4ece-a90d-a22991215de3" />
+<img width="1232" height="557" alt="image" src="https://github.com/user-attachments/assets/ec8980ae-3935-4993-8107-a1f369ae07a0" />
 
 ## Hardware
 SnapVision uses some parts from the GoPiGo3 while integrating external components, including the Raspberry Pi 4, LED strip, and Hosyond 5 inch display screen. The following is a full wiring diagram.
