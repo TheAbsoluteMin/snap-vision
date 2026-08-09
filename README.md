@@ -3,13 +3,11 @@ Automated 3D scanner utilizing photogrammetry.
 
 <img width="943" height="1008" alt="image" src="https://github.com/user-attachments/assets/c22eac14-78e4-4742-8dde-7bda896df4fd" />
 
-## See it
+## See it in action
 Demonstration link.
 
-3D model [link](https://cad.onshape.com/documents/4bb380a378ec8b5d44400d73/w/f93c1e6eb205d04d3b317060/e/29820a57393d4c7f3e63d056?renderMode=0&uiState=6a73d4c936d5df3b8f23dfd1).
-
 ## Inspiration
-Designing cases or models for real world parts through CAD can be difficult without exact measurements and dimensions. Obtaining such measurements and replicating intricate designs on some objects and electronic modules can also be tedious. Thus, I decided to build an automated 3D scanner that uses photogrammetry. With custom firmware and access to Open Scan API, the 3D scanning process is hands-free and streamlined after the initial run of the firmware. I hope this project can potentially expedite the engineering and design processes.
+Designing cases or models for real world parts through CAD can be difficult without exact measurements and dimensions. Obtaining such measurements and replicating intricate designs on some objects and electronic modules can also be tedious. Thus, I decided to build an automated 3D scanner that uses photogrammetry. With custom firmware and access to Open Scan API, SnapVision seeks to make the 3D scanning process hands-free and streamlined after the initial run of the firmware. I hope this project can potentially expedite the engineering and design processes.
 
 ## Features
 * High resolution camera
@@ -21,15 +19,7 @@ Designing cases or models for real world parts through CAD can be difficult with
 * Fully integrated and automated API processing
 * Real-time feedback during use
 
-## How to use
-1. Make sure SnapVision is in a well-lit place.
-2. Run the main firmware at [scan.py](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py) (python) or scan.ipynb (Jupyter Lab) on the Raspberry Pi 4.
-3. Place an object to be scanned inside SnapVision and on top of its platter.
-4. Fill in the firmware prompts by typing in the object's name and the number of photos to be taken.
-5. Watch SnapVision take photos, and wait until SnapVision finishes processing them with the Open Scan API.
-6. Wait for a success message and a 3D model preview of your completed scan!
-
-## How it works
+## Firmware Logic
 1. Scanning
     1. Take a photo of the object
     2. Rotate object
@@ -51,11 +41,35 @@ Designing cases or models for real world parts through CAD can be difficult with
         2. If failure:
             1. Try again
 
+## Hardware
+SnapVision mainly uses components from the GoPiGo3 kit while integrating an external display screen, LEDs, and . The following is a full wiring diagram.
+
+
+## CAD Case
+3D model [link](https://cad.onshape.com/documents/4bb380a378ec8b5d44400d73/w/f93c1e6eb205d04d3b317060/e/29820a57393d4c7f3e63d056?renderMode=0&uiState=6a73d4c936d5df3b8f23dfd1).
+
+The case design evolved heavily from the first design.
+
+Issues with space and hardware integration in the first design called for a remake. The second and final design was inspired by the 3D printer design. 
+
+
 ## BOM
 ???
 
+## How to use
+1. Make sure SnapVision is in a well-lit place.
+2. Run the main firmware at [scan.py](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py) (python) or scan.ipynb (Jupyter Lab) on the Raspberry Pi 4.
+3. Place an object to be scanned inside SnapVision and on top of its platter.
+4. Fill in the firmware prompts by typing in the object's name and the number of photos to be taken.
+5. Watch SnapVision take photos, and wait until SnapVision finishes processing them with the Open Scan API.
+6. Wait for a success message and a 3D model preview of your completed scan!
+
 ## Full assembly
-### A. Set up hardware
+<details>
+<summary>
+  <h3>A. Set up hardware</h3>
+</summary>
+
 1. Connect the Pi Camera Model 3 to the Raspberry Pi 4 with an FFC ribbon cable with the cable clips. Make sure you connect to the Pi 4's "CAMERA" cable clip.
 
 <img width="4000" height="3000" alt="20260804_204716" src="https://github.com/user-attachments/assets/381037ac-3754-493a-809b-afdb01468161" />
@@ -85,11 +99,21 @@ Designing cases or models for real world parts through CAD can be difficult with
 7. After following the Raspberry Pi 4 set up below, the battery pack can be connected to the red board's barrel jack. Remember, when powering on, always turn on the battery pack into the barrel jack before pressing the power button on the red board to start up the Pi 4. When turning off, press the power button on the red board before turning off the battery pack.
 
 <img width="4000" height="3000" alt="20260804_211535" src="https://github.com/user-attachments/assets/20380dc7-73e5-43d9-8e6e-ca4aca090e2e" />
+</details>
 
-### B. Install Pi OS
+<details>
+<summary>
+  <h3>B. Install Pi OS</h3>
+</summary>
+    
 If you already have Pi OS installed on your Raspberry Pi 4, you can skip this step. For more help, visit this [guide](https://github.com/TheAbsoluteMin/snap-vision/blob/main/docs/Raspberry_Pi_OS_Setup.md).
+</details>
 
-### C. Install firmware
+<details>
+<summary>
+  <h3>C. Install firmware</h3>
+</summary>
+
 1. Install GoPiGo3
 
 In the Pi terminal, type the commands:
@@ -171,10 +195,12 @@ then hit Ctrl+O, Enter key, and Ctrl+X to save and exit.
 4. Flash main firmware
 
 If you are coding in Jupyter Lab, you can run the code directly on its web server. Otherwise, you can download scan.py onto your Pi 4 from [here](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py).
+</details>
 
-
-
-### D. Final Assembly
+<details>
+<summary>
+  <h3>D. Final Assembly</h3>
+</summary>
 
 You can reference the model assembly here: https://cad.onshape.com/documents/4bb380a378ec8b5d44400d73/w/f93c1e6eb205d04d3b317060/e/29820a57393d4c7f3e63d056?renderMode=0&uiState=6a73d71636d5df3b8f23e703
 
@@ -211,6 +237,7 @@ However, you are able to 3D print everything.
 <img width="4000" height="3000" alt="20260804_220932" src="https://github.com/user-attachments/assets/1c4bfe47-5ad9-4101-b1b5-119832436e63" />
 11. Snap on the top case and top lid onto the second floor, and attach the Hosyond DSI display in the front.
 <img width="3000" height="4000" alt="20260804_225511" src="https://github.com/user-attachments/assets/9bf2987e-2721-49b7-bb26-1ae16a974a10" />
+</details>
 
 ## Credits
 Thank you to the following:
