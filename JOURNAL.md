@@ -1,7 +1,7 @@
 ---
 title: "SnapVision"
 author: "TheAbsoluteMin"
-description: "3D scanner utilizing photogrammetry."
+description: "Automated 3D scanner utilizing photogrammetry."
 created_at: "2026-07-26"
 ---
 
@@ -120,7 +120,7 @@ I relied a lot on standard API code, and used a lot of place holder values as I 
 
 <img width="2526" height="1407" alt="Screenshot 2026-07-30 013415" src="https://github.com/user-attachments/assets/0efc9ea8-ce6e-41dc-8adc-e0ff5a8fa295" />
 
-When I finally was able to test and integrate the code with Ryan's, I found out quickly that it did not work... Then, I realized that I would have to read the Open Scan API Github and source code later!
+When I finally was able to test and integrate the code with Ryan's, I found out quickly that it did not work... Then, I realized that I would have to read the Open Scan API GitHub and source code later!
 
 After spending quite some time laser cutting and reprinting many parts due to inaccurate measurements and dimensions, my friend and I finally began on assembling the model! The box is mainly made up of laser-cut pieces, while pieces like the plane and walls that the camera views were 3D printed in gray to provide contrast when the API scans the pictures.
 
@@ -207,5 +207,43 @@ After setting up the Jupyter Lab web server, I could finally begin coding. Of co
 
 ### Future work:
 I began to adapt the Open Scan API's example code, and I hope to continue to integrate the API automation code into my project next time!
+
+---
+
+## Log 6: August 6-7, 2026 - More Coding - 3 hours
+Timelapse <a href="https://lapse.hackclub.com/timelapse/wpJM3WVz891h">link</a>.
+
+With the guidance of the example firmware in the Open Scan API GitHub, I integrated the firmware that would connect with the API server.
+
+<img width="1273" height="762" alt="image" src="https://github.com/user-attachments/assets/949f601b-9b41-40c5-af74-a461124fac1a" />
+
+The API required a lot of verification steps, including token and photo data checks, before I could actually send the images over in the form of ZIP files.
+
+<img width="1523" height="531" alt="image" src="https://github.com/user-attachments/assets/3106839f-b1e9-42eb-86e5-7df7b42f8688" />
+
+I realized that the example firmware defaulted to returning an email with a ZIP Dropbox download! Since I wanted to make my 3D scanner automated, I needed to get the 3D model directly without manually opening up an email.
+
+First, I tried to access my email through IMAP in order to retrieve the latest email.
+
+<img width="1009" height="673" alt="image" src="https://github.com/user-attachments/assets/9c4cbaae-fc49-4d04-8c67-e9d7da950676" />
+
+Then, I could find the Dropbox download link in that email.
+
+<img width="1302" height="470" alt="image" src="https://github.com/user-attachments/assets/ea7de8bd-5275-4d4e-b13c-573d0a71137a" />
+
+However, considering the safety and security implications of using an app password for this application, I wondered if there was a better way. Fortunately, after reading again through the API's GitHub README, I found an interesting word in the response fields of the Get Project Info endpoint.
+
+<img width="1072" height="1050" alt="image" src="https://github.com/user-attachments/assets/3d4b66cb-b5e0-4768-95d1-2530ae46df17" />
+
+With this, I tested to see if I could simply retrieve "dlink" in the firmware after the 3D model was created.
+
+<img width="1037" height="582" alt="image" src="https://github.com/user-attachments/assets/66791d3b-595b-4d12-9a30-ec5f5ba83f9f" />
+
+After downloading the Dropbox ZIP file with the firmware, I could extract it to access the .obj 3D model file! As a bonus, I decided to use F3D viewer to display the 3D model at the end!
+
+<img width="1658" height="303" alt="image" src="https://github.com/user-attachments/assets/51bbfe6b-5c35-46bc-81b0-94b9f8cbc193" />
+
+### Future work:
+Next time, I will test out the code again to make sure it works, so I can begin finishing up the GitHub repository!
 
 ---
