@@ -259,7 +259,13 @@ Then, I spent an incredibly long amount of time just trying to get one full succ
 
 <img width="1942" height="554" alt="image" src="https://github.com/user-attachments/assets/7bf71871-d9cf-4d36-9abe-d8e596e84b1c" />
 
-As the hours go by, I will keep trying to get the firmware to work again!
+My first attempt in fixing this problem included reverting the file naming to the original one set by Open Scan. However, that did not work.
+
+After comparing my API code with the example code from Open Scan API, I figured that there must have been a problem with the images that were being put into a ZIP file. Apparently, the Open Scan API code explicitly checked for allowed photo types like .jpg in order to prevent hidden files in the camera folder to be included in the ZIP file that would be sent over to the API server. I implemented that and the data transmission errors went away! 
+
+<img width="836" height="176" alt="image" src="https://github.com/user-attachments/assets/a244ee14-3d9c-4e16-bc17-d90c173686b9" />
+
+However, a key problem with the API is that it does not always return dlink in its project information endpoint. Thus, I may have to revisit the email IMAP code.
 
 ### Future work:
 I hope I can finally obtain a working video of SnapVision working!
