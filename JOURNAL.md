@@ -231,7 +231,7 @@ Then, I could find the Dropbox download link in that email.
 
 <img width="1302" height="470" alt="image" src="https://github.com/user-attachments/assets/ea7de8bd-5275-4d4e-b13c-573d0a71137a" />
 
-However, considering the safety and security implications of using an app password for this application, I wondered if there was a better way. Fortunately, after reading again through the API's GitHub README, I found an interesting word in the response fields of the Get Project Info endpoint.
+However, considering the safety and security implications of using an email credentials for this application, I wondered if there was a better way. Fortunately, after reading again through the API's GitHub README, I found an interesting word in the response fields of the Get Project Info endpoint.
 
 <img width="1072" height="1050" alt="image" src="https://github.com/user-attachments/assets/3d4b66cb-b5e0-4768-95d1-2530ae46df17" />
 
