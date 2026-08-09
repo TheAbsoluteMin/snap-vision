@@ -26,7 +26,7 @@ brightness = 0.05
 lights = dotstar.DotStar(clock_pin, data_pin, num_leds, brightness=brightness, auto_write=False)
 
 #API, variables from Open Scan API example code
-token = "REPLACE_WITH_YOUR_TOKEN_HERE" #ask for a token at the official Open Scan API email: cloud@openscan.eu.
+token = "d48c7ddb78b54Xf8ac1734bX9dbd392X"
 folder = "/home/pi4/Camera/"
 dir_temp = "/home/pi4/temp/"
 zip_scanned = "/home/pi4/Scanned/"
@@ -43,7 +43,8 @@ def OpenScanCloud(cmd, msg_req):
 
 #Clean old photos
 os.makedirs(folder, exist_ok=True)
-old_photos = glob.glob("Camera/*.jpg")
+old_photos = glob.glob(os.path.join(folder, "*.jpg"))
+
 if old_photos:
     for photo in old_photos:
         os.remove(photo)
@@ -69,7 +70,7 @@ camera.set_controls(
     {
         "AwbMode": libcamera.controls.AwbModeEnum.Daylight,
         "AfMode": libcamera.controls.AfModeEnum.Manual, 
-        "LensPosition": 10.0
+        "LensPosition": 14.0
     }
 )
 camera.start()
