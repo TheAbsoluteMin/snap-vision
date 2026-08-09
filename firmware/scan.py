@@ -70,7 +70,7 @@ camera.set_controls(
     {
         "AwbMode": libcamera.controls.AwbModeEnum.Daylight,
         "AfMode": libcamera.controls.AfModeEnum.Manual, 
-        "LensPosition": 14.0
+        "LensPosition": 12.0
     }
 )
 camera.start()
