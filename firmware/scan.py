@@ -3,7 +3,6 @@ from IPython.display import Image, display
 from picamera2 import Picamera2
 from picamera2 import libcamera
 import cv2
-import glob
 import adafruit_dotstar as dotstar
 import board
 import time
@@ -12,6 +11,10 @@ import requests
 import zipfile
 import urllib.parse
 import subprocess
+import shutil
+import imaplib
+import re
+import email
 
 ### 0. Set up
 
@@ -25,8 +28,13 @@ num_leds = 120
 brightness = 0.05
 lights = dotstar.DotStar(clock_pin, data_pin, num_leds, brightness=brightness, auto_write=False)
 
-#API, variables from Open Scan API example code
-token = "REPLACE_WITH_YOUR_TOKEN_HERE" #ask for a token at the official Open Scan API email: cloud@openscan.eu.
+##### Edit these! #####
+token = "#####" #ask for a token at the official Open Scan API email: cloud@openscan.eu
+IMAP = "imap.gmail.com" #fill out the below, optional but needed for 100% success to get downloadable link for 3D model
+email_user = "#####" #your Gmail username
+email_pass = "#####" #your Gmail app password
+
+#API variables
 folder = "/home/pi4/Camera/"
 dir_temp = "/home/pi4/temp/"
 zip_scanned = "/home/pi4/Scanned/"
@@ -36,18 +44,18 @@ user = "openscan"
 pw = "free"
 size_to_split = 200000000 #200MB max files size
 msg = {"token": token}
+allowed_extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG']
 
 #get API requests
 def OpenScanCloud(cmd, msg_req):
     return requests.get(server + cmd, auth=(user,pw), params=msg_req)
 
-#Clean old photos
-os.makedirs(folder, exist_ok=True)
-old_photos = glob.glob(os.path.join(folder, "*.jpg"))
-
-if old_photos:
-    for photo in old_photos:
-        os.remove(photo)
+#clean all folders
+folders_clean = ["/home/pi4/Camera/", "/home/pi4/temp/", "/home/pi4/Scanned/", "/home/pi4/Extracted/",]
+for folder in folders_clean:
+    if os.path.exists(folder):
+        shutil.rmtree(folder)
+    os.makedirs(folder, exist_ok=True)
 
 ### 1. Scanning
 #object preferences
@@ -112,9 +120,11 @@ print(f"Token verified. Credits left: {credit}.")
 #check photo data
 limit_file_size = token_info.json()["limit_filesize"]
 limit_photos = token_info.json()["limit_photos"]
+
 images = []
 for image in os.listdir(folder):
-    images.append(image)
+    if os.path.splitext(image)[1] in allowed_extensions:
+        images.append(image)
 
 if len(images) == 0:
     raise Exception("ERROR: No images found")
@@ -131,12 +141,11 @@ if file_size > limit_file_size or len(images) > limit_photos:
 print("Preparing images.")
 
 #clean dir_temp folder
-os.makedirs(dir_temp, exist_ok=True)
 for i in os.listdir(dir_temp):
     try: os.remove(os.path.join(dir_temp, i))
     except: pass
 
-project_name = f"{object_name}_scan_{int(time.time())}.zip"
+project_name = str(int(time.time()*100))+ '-OSC.zip'
 file = os.path.join(dir_temp, project_name)
 msg["project"] = project_name
 
@@ -202,13 +211,36 @@ while True:
     scan_status = info.get("status", "unknown")
     print(f"[{time.strftime("%X")}] Status: {scan_status}.")
 
-    if scan_status == "Processing done":
+    if scan_status == "processing done":
         time.sleep(10)
-        dlink = info.get("dlink")
+        dlink = info.get("dlink") #if Open Scan API returns dlink
         
-        if not dlink:
-            print("ERROR: No download link found.")
-            break
+        if not dlink: #if Open Scan API does not return dlink, use IMAP
+            print("ERROR: No download link found. Using IMAP to find link.")
+            time.sleep(20) #wait for email to send
+
+            mail = imaplib.IMAP4_SSL(IMAP)
+            mail.login(email_user, email_pass)
+            mail.select("INBOX")
+
+            #find latest email from Open Scan API
+            status, messages = mail.search(None, '(FROM "cloud@openscan.eu")')
+            if status == "OK" and messages[0]:
+                newest = messages[0].split()[-1]
+                _, data_message = mail.fetch(newest, "(RFC822)")
+                target_message = email.message_from_bytes(data_message[0][1])
+
+                text_message = ""
+                for part in target_message.walk():
+                    if part.get_content_type() in ["text/plain", "text/html"]:
+                        text = part.get_payload(decode=True).decode(errors="ignore")
+                        break
+                        
+                #get dlink from email
+                links = re.findall(r'https?://[^\s"<]*openscan\.eu[^\s"<]*', text)
+                if links:
+                    dlink = links[0].replace("&amp;", "&")
+                mail.logout()
 
         #extract dropbox zip download link
         parsed = urllib.parse.urlparse(dlink)
@@ -222,15 +254,13 @@ while True:
             dlink = dlink.replace("dl=0", "dl=1")
 
         #download zip file from dropbox
-        os.makedirs(zip_scanned, exist_ok=True)
         r = requests.get(dlink, allow_redirects=True)
-        with open(zip_scanned, "wb") as f:
+        file_download = os.path.join(zip_scanned, os.path.basename(dlink))
+        with open(file_download, "wb") as f:
             f.write(r.content)
-        print("ZIP downloaded from:", dlink)
-
+        
         #extract zip file
-        os.makedirs(zip_extracted, exist_ok=True)
-        with ZipFile(zip_scanned, "r") as zip_r:
+        with zipfile.ZipFile(file_download, "r") as zip_r:
             zip_r.extractall(zip_extracted)
         print("ZIP Extraction complete!")
 
@@ -238,15 +268,18 @@ while True:
         model = next((f for f in os.listdir(zip_extracted) if f.lower().endswith(".obj")), None)
         if not model:
             print("ERROR: No .obj 3D model found.")
-        path_model = os.path.join(zip_extracted, model)
+            break
+        else:
+            path_model = os.path.join(zip_extracted, model)
 
-        #display 3D model on F3D viewer
-        ENV = os.environ.copy()
-        ENV["WAYLAND_DISPLAY"] = "wayland-0"
-        ENV["DISPLAY"] = ":0"
-        ENV["XAUTHORITY"] = "/home/pi4/.Xauthority"
-        subprocess.Popen(["f3d", "--resolution=760,400", "--position=20,70", path_model], env=ENV)
-        break
+            #display 3D model on F3D viewer
+            ENV = os.environ.copy()
+            ENV["WAYLAND_DISPLAY"] = "wayland-0"
+            ENV["DISPLAY"] = ":0"
+            ENV["XAUTHORITY"] = "/home/pi4/.Xauthority"
+            subprocess.Popen(["f3d", "--resolution=760,400", "--position=20,70", path_model], env=ENV)
+            print("Displaying 3D model!")
+            break
 
     elif scan_status == "Processing failed":
         print("ERROR: Unable to create 3D model. Please try again.")
