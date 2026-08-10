@@ -5,12 +5,9 @@ description: "Automated 3D scanner utilizing photogrammetry."
 created_at: "2026-07-26"
 ---
 
-# SnapVision Development Log
-
-## Log 1: July 26, 2026 - Initial CAD Attempt - 3 hours
+# Log 1: July 26, 2026 - Initial CAD Attempt - 3 hours
 Timelapse <a href="https://lapse.hackclub.com/timelapse/oqR18RJn2kxE">link</a>.
 
-### Inspiration:
 Oftentimes, when I am designing a case for a project through CAD, I need to reference the dimensions and physical models of real world objects. However, obtaining measurements and replicating intricate designs on some objects and electronics can be difficult and time-consuming. Thus, I decided to build a 3D scanner that uses photogrammetry to automate the generation of 3D files for me, which can greatly expedite the engineering and design processes.
 
 I began working on the CAD model for the 3D scanner, and I wanted to create a polygon shaped base.
@@ -25,12 +22,14 @@ It was especially difficult to orient the camera in a natural place, but with so
 
 <img width="2554" height="1206" alt="image" src="https://github.com/user-attachments/assets/2271ae5d-c7f8-4086-abf4-a19e006b4c70" />
 
-### Future work:
+
 Tomorrow, I will continue to plan and construct the 3D scanner case!
+
+**Total time spent: 3 hours**
 
 ---
 
-## Log 2: July 27, 2026 - CAD Part 2 - 1 hour
+# Log 2: July 27, 2026 - CAD Part 2 - 1 hour
 Timelapse <a href="https://lapse.hackclub.com/timelapse/i1yO9gOfZwh6">link</a>.
 
 With the basic design finished, I worked on the internal components of the 3D scanner case, including holes and channels for wiring and electronics, especially the camera that is isolated far from the Raspberry Pi 4.
@@ -46,12 +45,14 @@ This is what the model looks like as of now:
 <img width="681" height="932" alt="image" src="https://github.com/user-attachments/assets/9fbfdd0e-8b4c-4950-9d39-6de6dc3aa596" />
 
 
-### Future work:
+
 I will attempt to 3D print the pieces next time to evaluate them physically.
+
+**Total time spent: 1 hour**
 
 ---
 
-## Log 3: July 28-29, 2026 - CAD Part 2 - 5.6 hours
+# Log 3: July 28-29, 2026 - CAD Part 2 - 5.6 hours
 Timelapse <a href="https://lapse.hackclub.com/timelapse/_uOzVr4UmdGI">link</a>.
 
 After finding a Hosyond 5 inch DSI display, I felt motivated to adapt my design to offer a more sleek appearance.
@@ -87,12 +88,14 @@ The colors shown are not the final colors of the project as I needed to see a cl
 
 Today, SnapVision welcomed a new collaborator and friend, Ryan. During the final project week of the Tufts Engineering Design Lab Pre-College Summer Program, he agreed to work with me on fabricating my 3D scanner! While I worked extensively on the CAD design today, Ryan worked on the foundation of the code for SnapVision, and he tested out the camera, motors, and LEDs. Despite some slight difficulties with camera colors, he was able to get the code to take clear pictures and rotate the DC motor by a few degrees and repeat while running white LEDs.
 
-### Future work:
+
 I have begun laser cutting some of the sides and 3D printing some of the mechanical parts. I hope to finish assembling the project tomorrow!
+
+**Total time spent: 5.6 hours**
 
 ---
 
-## Log 4: July 29-30, 2026 - Coding and Assembly - 3 hours
+# Log 4: July 29-30, 2026 - Coding and Assembly - 3 hours
 Assembly Timelapse <a href="https://lapse.hackclub.com/timelapse/1YW8Dd9PgHda">link</a>.
 Coding hours tracked on Hackatime.
 
@@ -145,12 +148,14 @@ With a lot of hot glue, Ryan and I were able to put together a nice case with a 
 <img width="3000" height="4000" alt="20260730_183625" src="https://github.com/user-attachments/assets/9b4831cc-2c98-4a73-86ef-7e96d9e174bd" />
 <img width="3000" height="4000" alt="20260730_183635" src="https://github.com/user-attachments/assets/e05d18f4-eb5c-4c88-a2cf-93b5f4c3a4ba" />
 
-### Future work:
+
 I hope to soon write a polished and fully complete firmware for my project as the Tufts program is ending on July 31, 2026, so Ryan will no longer be able to help me with the project and coding. However, I hope I can finished it!
+
+**Total time spent: 3 hours**
 
 ---
 
-## Log 5: August 4, 2026 - Raspberry Pi 4 Setup and Firmware - 6 hours
+# Log 5: August 4, 2026 - Raspberry Pi 4 Setup and Firmware - 6 hours
 Timelapse <a href="https://lapse.hackclub.com/timelapse/Z6yoEgbLf6Xv">link</a>.
 
 Wow, do I have a story to tell you! I was experimenting with the DSI display screen, and I wondered if I could display CAD files! Thus, I tried to run the lightweight F3D, a 3D viewer application, to display a simple .obj file.
@@ -205,12 +210,14 @@ After setting up the Jupyter Lab web server, I could finally begin coding. Of co
 
 <img width="1113" height="442" alt="image" src="https://github.com/user-attachments/assets/e36530b8-721a-407c-a190-e209afd3d0c1" />
 
-### Future work:
+
 I began to adapt the Open Scan API's example code, and I hope to continue to integrate the API automation code into my project next time!
+
+**Total time spent: 6 hours**
 
 ---
 
-## Log 6: August 6-7, 2026 - More Coding - 3 hours
+# Log 6: August 6-7, 2026 - More Coding - 3 hours
 Timelapse <a href="https://lapse.hackclub.com/timelapse/wpJM3WVz891h">link</a>.
 
 With the guidance of the example firmware in the Open Scan API GitHub, I integrated the firmware that would connect with the API server.
@@ -243,12 +250,14 @@ After downloading the Dropbox ZIP file with the firmware, I could extract it to 
 
 <img width="1658" height="303" alt="image" src="https://github.com/user-attachments/assets/51bbfe6b-5c35-46bc-81b0-94b9f8cbc193" />
 
-### Future work:
+
 Next time, I will test out the code again to make sure it works, so I can begin finishing up the GitHub repository!
+
+**Total time spent: 3 hours**
 
 ---
 
-## Log 7: August 9, 2026 - GitHub Work and Code Testing - 3 hours
+# Log 7: August 9, 2026 - GitHub Work and Code Testing - 3 hours
 
 Today, I extensively worked on putting together the GitHub repository files. Getting all the pictures and files together took quite some time, as I had to disassemble my project and then put it back together step by step in order to include assembly instructions!
 
@@ -267,7 +276,9 @@ After comparing my API code with the example code from Open Scan API, I figured 
 
 However, a key problem with the API is that it does not always return dlink in its project information endpoint. Thus, I may have to revisit the email IMAP code.
 
-### Future work:
+
 I hope I can finally obtain a working video of SnapVision working!
+
+**Total time spent: 3 hours**
 
 ---
