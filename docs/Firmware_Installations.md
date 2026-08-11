@@ -81,3 +81,5 @@ then hit Ctrl+O, Enter key, and Ctrl+X to save and exit.
 ## Flash main firmware
 
 If you are coding in Jupyter Lab, you can run the code directly on its web server. Otherwise, you can download scan.py onto your Pi 4 from [here](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py).
+
+Before running the firmware, ensure you add your API token, which can be obtained by emailing the official Open Scan API email at cloud@openscan.eu. If you want to ensure SnapVision works all the time, please add your Gmail address and Gmail app password in case Open Scan API does not return a valid download link in its dlink endpoint.
