@@ -16,6 +16,7 @@ Designing cases or models for real world parts through CAD can be difficult with
 * Internal LEDs
 * Powerful yet stable motor
 * Fully integrated and automated API processing
+* Adaptive 3D model ZIP file download handling
 * Real-time feedback during use
 
 ## Firmware Logic
@@ -35,13 +36,16 @@ Designing cases or models for real world parts through CAD can be difficult with
 3. Extract the 3D model from API
     1. Check API processing status every 30 seconds
         1. If success:
-            1. Get downloadable Dropbox link
+            1. Check API dlink endpoint for download link
+                1. If download link given, extract it
+                2. If not, use IMAP to extract it from email
             2. Download ZIP file
             3. Find .obj 3D model file
             4. Show 3D model on display screen
         2. If failure:
             1. Try again
 <img width="1232" height="557" alt="image" src="https://github.com/user-attachments/assets/ec8980ae-3935-4993-8107-a1f369ae07a0" />
+<img width="1364" height="968" alt="image" src="https://github.com/user-attachments/assets/8d296c10-971f-4316-a03e-3c209b6ed6fb" />
 
 ## Hardware
 SnapVision uses some parts from the GoPiGo3 while integrating external components, including the Raspberry Pi 4, LED strip, and Hosyond 5 inch display screen. The following is a full wiring diagram.
@@ -204,6 +208,8 @@ then hit Ctrl+O, Enter key, and Ctrl+X to save and exit.
 4. Flash main firmware
 
 If you are coding in Jupyter Lab, you can run the code directly on its web server. Otherwise, you can download scan.py onto your Pi 4 from [here](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py).
+
+Before running the firmware, ensure you add your API token, which can be obtained by emailing the official Open Scan API email at cloud@openscan.eu. If you want to ensure SnapVision works all the time, please add your Gmail address and Gmail app password in case Open Scan API does not return a valid download link in its dlink endpoint.
 </details>
 
 <details>
