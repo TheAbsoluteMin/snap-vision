@@ -31,7 +31,7 @@ lights = dotstar.DotStar(clock_pin, data_pin, num_leds, brightness=brightness, a
 ##### Edit these! #####
 token = "#####" #ask for a token at the official Open Scan API email: cloud@openscan.eu
 IMAP = "imap.gmail.com" #fill out the below, optional but needed for 100% success to get downloadable link for 3D model
-email_user = "#####" #your Gmail username
+email_user = "#####" #your Gmail address
 email_pass = "#####" #your Gmail app password
 
 #API variables
