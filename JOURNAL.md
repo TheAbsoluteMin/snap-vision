@@ -284,7 +284,7 @@ I hope I can finally obtain a working video of SnapVision working!
 ---
 
 # Log 8: August 10, 2026 - Firmware Fixes - 1.1 hours
-Timelapse <a href="https://lapse.hackclub.com/timelapse/publish/ZiJJ-kKts3R0">link</a>.
+Timelapse <a href="https://lapse.hackclub.com/timelapse/sTsILPRuamga">link</a>.
 
 Today was a big day! After a long, hard fought war against my firmware, I finally was able to achieve a complete and successful run of the firmware! However, there were some notable problems with the code that I had to solve.
 
