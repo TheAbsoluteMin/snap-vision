@@ -283,7 +283,8 @@ I hope I can finally obtain a working video of SnapVision working!
 
 ---
 
-# Log 8: August 10, 2026 - Firmware Fixes - 1 hour
+# Log 8: August 10, 2026 - Firmware Fixes - 1.1 hours
+Timelapse <a href="https://lapse.hackclub.com/timelapse/publish/ZiJJ-kKts3R0">link</a>.
 
 Today was a big day! After a long, hard fought war against my firmware, I finally was able to achieve a complete and successful run of the firmware! However, there were some notable problems with the code that I had to solve.
 
@@ -305,8 +306,8 @@ A run of the firmware proved that my code finally worked, even when Open Scan AP
 
 <img width="1677" height="313" alt="image" src="https://github.com/user-attachments/assets/8ba5e200-8139-40ab-9ad6-eaf3f10833ac" />
 
-With some final edits to my GitHub repository, I am finally finished with SnapVision!
+With some final edits to my GitHub repository, I hope I can finish SnapVision soon!
 
-**Total time spent: 1 hour**
+**Total time spent: 1.1 hour**
 
 ---
