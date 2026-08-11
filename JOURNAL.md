@@ -282,3 +282,31 @@ I hope I can finally obtain a working video of SnapVision working!
 **Total time spent: 3 hours**
 
 ---
+
+# Log 8: August 10, 2026 - Firmware Fixes - 1 hour
+
+Today was a big day! After a long, hard fought war against my firmware, I finally was able to achieve a complete and successful run of the firmware! However, there were some notable problems with the code that I had to solve.
+
+First, my previous code logic form downloading the ZIP file from the API returned an "is a directory error".
+
+<img width="827" height="296" alt="image" src="https://github.com/user-attachments/assets/9caef2b4-3666-49e7-848a-8703fa16f8d1" />
+
+Thus, I had to use "os.path.basename(dlink)" in order to extract the end of the URL path, so that the firmware could download to a working folder path.
+
+<img width="1132" height="216" alt="image" src="https://github.com/user-attachments/assets/2ef21ad9-7d71-471f-8aa0-878df56af45c" />
+
+After some testing, I confirmed Open Scan API's interesting quirk where it would sometimes not include a downloadable link in its dlink API endpoint. To handle this, I implemented an adaptive handling feature where the code would first check the dlink endpoint before using an alternative method to get the ZIP download link. This is where the IMAP code, which I had initially rejected, now shines.
+
+Now, instead of blindly targeting the latest email, the firmware targets the latest email from Open Scan API and finds the dlink in the email text, so I can download the ZIP file later.
+
+<img width="1299" height="957" alt="image" src="https://github.com/user-attachments/assets/828a2fda-c705-4bb8-8f0f-d982b58785b5" />
+
+A run of the firmware proved that my code finally worked, even when Open Scan API did not include the download link!
+
+<img width="1677" height="313" alt="image" src="https://github.com/user-attachments/assets/8ba5e200-8139-40ab-9ad6-eaf3f10833ac" />
+
+With some final edits to my GitHub repository, I am finally finished with SnapVision!
+
+**Total time spent: 1 hour**
+
+---
