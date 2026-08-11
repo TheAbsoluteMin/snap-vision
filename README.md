@@ -4,6 +4,12 @@ Automated 3D scanner utilizing photogrammetry.
 
 ## See it in action
 Demonstration link.
+<details>
+<summary>
+  <h3>Pictures</h3>
+</summary>
+image here
+</details>
 
 ## Inspiration
 Designing cases or models for real world parts through CAD can be difficult without exact measurements and dimensions. Obtaining such measurements and replicating intricate designs on some objects and electronic modules can also be tedious. Thus, I decided to build an automated 3D scanner that uses photogrammetry. With custom firmware and access to Open Scan API, SnapVision seeks to make the 3D scanning process hands-free and streamlined after the initial run of the firmware. I hope this project can potentially expedite the engineering and design processes.
@@ -45,7 +51,7 @@ Designing cases or models for real world parts through CAD can be difficult with
         2. If failure:
             1. Try again
 <img width="1232" height="557" alt="image" src="https://github.com/user-attachments/assets/ec8980ae-3935-4993-8107-a1f369ae07a0" />
-<img width="1364" height="968" alt="image" src="https://github.com/user-attachments/assets/8d296c10-971f-4316-a03e-3c209b6ed6fb" />
+<img width="1287" height="944" alt="image" src="https://github.com/user-attachments/assets/b1a88074-9171-4f15-bd65-50f81a217ea3" />
 
 ## Hardware
 SnapVision uses some parts from the GoPiGo3 while integrating external components, including the Raspberry Pi 4, LED strip, and Hosyond 5 inch display screen. The following is a full wiring diagram.
@@ -207,7 +213,31 @@ then hit Ctrl+O, Enter key, and Ctrl+X to save and exit.
 
 4. Flash main firmware
 
-If you are coding in Jupyter Lab, you can run the code directly on its web server. Otherwise, you can download scan.py onto your Pi 4 from [here](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py).
+If you are coding in Jupyter Lab, you can run the code directly on its web server. Otherwise, you can download scan.py onto your Pi 4 from [here](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py). With Jupyter Lab, you can convert your scan.ipynb file into scan.py with the Pi terminal command:
+> ~/.venv/robotics/bin/python3 -m jupyter nbconvert --to script /home/pi4/Desktop/scan.ipynb
+
+Doing so is suggested as you can run the code without a computer. In order to run the firmware by simply pressing on an icon, write the following command in the Pi terminal:
+> nano ~/Desktop/Scan.desktop
+
+Then, inside the text editor, write the following:
+> [Desktop Entry]
+
+> Name=Run Scan
+
+> Comment=Runs robotics script
+
+> Exec=/home/pi4/.venv/robotics/bin/python3 /home/pi4/Desktop/scan.py
+
+> Icon=utilities-terminal
+
+> Terminal=true
+
+> Type=Application
+
+and then press Ctrl + O, Enter key, and Ctrl + X to save and exit.
+
+Finally, type the command in the terminal:
+> chmod +x ~/Desktop/Scan.desktop
 
 Before running the firmware, ensure you add your API token, which can be obtained by emailing the official Open Scan API email at cloud@openscan.eu. If you want to ensure SnapVision works all the time, please add your Gmail address and Gmail app password in case Open Scan API does not return a valid download link in its dlink endpoint.
 </details>
