@@ -80,6 +80,30 @@ then hit Ctrl+O, Enter key, and Ctrl+X to save and exit.
 
 ## Flash main firmware
 
-If you are coding in Jupyter Lab, you can run the code directly on its web server. Otherwise, you can download scan.py onto your Pi 4 from [here](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py).
+If you are coding in Jupyter Lab, you can run the code directly on its web server. Otherwise, you can download scan.py onto your Pi 4 from [here](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py). With Jupyter Lab, you can convert your scan.ipynb file into scan.py with the Pi terminal command:
+> ~/.venv/robotics/bin/python3 -m jupyter nbconvert --to script /home/pi4/Desktop/scan.ipynb
+
+Doing so is suggested as you can run the code without a computer. In order to run the firmware by simply pressing on an icon, write the following command in the Pi terminal:
+> nano ~/Desktop/Scan.desktop
+
+Then, inside the text editor, write the following:
+> [Desktop Entry]
+
+> Name=Run Scan
+
+> Comment=Runs robotics script
+
+> Exec=/home/pi4/.venv/robotics/bin/python3 /home/pi4/Desktop/scan.py
+
+> Icon=utilities-terminal
+
+> Terminal=true
+
+> Type=Application
+
+and then press Ctrl + O, Enter key, and Ctrl + X to save and exit.
+
+Finally, type the command in the terminal:
+> chmod +x ~/Desktop/Scan.desktop
 
 Before running the firmware, ensure you add your API token, which can be obtained by emailing the official Open Scan API email at cloud@openscan.eu. If you want to ensure SnapVision works all the time, please add your Gmail address and Gmail app password in case Open Scan API does not return a valid download link in its dlink endpoint.
