@@ -1,14 +1,19 @@
 # SnapVision
 Automated 3D scanner utilizing photogrammetry.
 
+<img width="512" height="384" alt="image" src="https://github.com/user-attachments/assets/dcf6dad9-869e-48fe-be13-74e45319bba2" />
 
 ## See it in action
-Demonstration link.
+Demonstration [link](https://canva.link/5rpxtrnuvlr2msd).
 <details>
 <summary>
   <h3>Pictures</h3>
 </summary>
-image here
+<img width="384" height="512" alt="image" src="https://github.com/user-attachments/assets/a103a871-a36a-431c-a330-acb54c2569d7" />
+<img width="384" height="512" alt="image" src="https://github.com/user-attachments/assets/ff3f44b8-398a-42de-b204-4ba96f63b2cd" />
+<img width="384" height="512" alt="image" src="https://github.com/user-attachments/assets/938eb9de-84b6-48b5-ad84-e459a61b41b8" />
+<img width="384" height="512" alt="image" src="https://github.com/user-attachments/assets/23375c97-f78f-43bc-b00c-126279b8d1c3" />
+<img width="512" height="384" alt="image" src="https://github.com/user-attachments/assets/440311c2-9abb-4120-89a0-d9ada2fbe244" />
 </details>
 
 ## Inspiration
@@ -56,6 +61,11 @@ Designing cases or models for real world parts through CAD can be difficult with
 ## Hardware
 SnapVision uses some parts from the GoPiGo3 while integrating external components, including the Raspberry Pi 4, LED strip, and Hosyond 5 inch display screen. The following is a full wiring diagram.
 
+<img width="512" height="384" alt="17beecfb159768de8a5b11c459478a4fd769f798-2" src="https://github.com/user-attachments/assets/dfe2ff06-29b2-494a-b66c-05a124b220a3" />
+
+Below shows where each jumper wire connects to.
+
+<img width="512" height="384" alt="image" src="https://github.com/user-attachments/assets/b3be0bf6-8043-49cc-be82-3f7bf7fed6f3" />
 
 ## CAD Case
 3D model [link](https://cad.onshape.com/documents/4bb380a378ec8b5d44400d73/w/f93c1e6eb205d04d3b317060/e/29820a57393d4c7f3e63d056?renderMode=0&uiState=6a73d4c936d5df3b8f23dfd1).
@@ -74,11 +84,16 @@ Issues with space and hardware integration in the first design called for a rema
 | :--- | :---: | :---: | :--- |
 | GoPiGo3 | 1 | $199.00 | [GoPiGo](https://gopigo.io/gopigo/) |
 | Raspberry Pi 4 | 1 | $40.34 | [Vilros](https://vilros.com/products/raspberry-pi-4-model-b-1?src=raspberrypi) |
+| Female to Female Jumper Wires | 1 | $1.95 | [DigiKey](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1950/6827084?gclsrc=aw.ds&gad_source=1&gad_campaignid=20232005509&gbraid=0AAAAADrbLlhVdRwAl9BaQJQ8R3rcCtjWD&gclid=Cj0KCQjwkOvTBhDgARIsAKUNyRufs3seb5vYffNt0EpXB_ts9HhJ-eCl9TgbtiG5iOTjZia92rjU4PMaAkI1EALw_wcB) |
+| Raspberry Pi Camera Model 3 Wide | 1 | $35.00 | [DigiKey](https://www.digikey.com/en/products/detail/raspberry-pi/SC1224/17278644?gclsrc=aw.ds&gad_source=1&gad_campaignid=20243136172&gbraid=0AAAAADrbLlhR73418N_gzRdZCZs-XyIRg&gclid=Cj0KCQjwkOvTBhDgARIsAKUNyRvCMVqoebY3196pq4VTC47FHzo3ao4irYrOpC0PHcqEPT4nF2owrSMaAsc9EALw_wcB) |
+| LEDs | 1 | $26.65 | [BTF-LIGHTING](https://www.btf-lighting.com/products/1-sk9822-led-pixel-strip-data-and-clock-dc5v?variant=45759013257442&country=US&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic) |
+| Hosyond 5 inch DSI Display Screen | 1 | $34.99 | [Amazon](https://www.amazon.com/Hosyond-Touchscreen-Compatible-Capacitive-Driver-Free/dp/B0CXTFN8K9/ref=sr_1_2?crid=J0PB8AO5G6PO&dib=eyJ2IjoiMSJ9.W5A_3BEZuul4IaYNDccoJD4CpOIs60yZhFtwtabcTv_V1aE_tCzvbg5e6t6kIP3-d9cp0wRtvrzGxty8EBlp3lYV6uLsyOKhqwiJeiZCSefF9ua-Ogq_1gBWOIJXmFx5qI520voBxjBSl8QE0jXhazIP0an7d42VIe7VHFyOSN76RzuU-jtJ3IXoajBAQxedLD0u9Bkb2n8LB6TbgXJXcgMpfGlorrmWQQCtZUSV-0IgX-qe85jz5F0RiFINVOFgEIFjGmDnNb_33DanE-EXGB0SuCGUDWdsEqtRXaVXk4Q.Vg7k1_UTUTyFYZ0k8x07Ql5eXUTpbm087ST9tiSZUAg&dib_tag=se&keywords=Hosyond%2B5%2BInch%2BTouchscreen%2BIPS%2BMIPI%2BDSI%2BDisplay%2BCompatible%2Bwith%2BRaspberry%2BPi%2B5%2F4%2F3%2C%2B800x480%2BPixel%2BCapacitive%2BScreen%2BDriver-Free%2BInterface&nsdOptOutParam=true&qid=1786503130&s=electronics&sprefix=hosyond%2B5%2Binch%2Btouchscreen%2Bips%2Bmipi%2Bdsi%2Bdisplay%2Bcompatible%2Bwith%2Braspberry%2Bpi%2B5%2F4%2F3%2C%2B800x480%2Bpixel%2Bcapacitive%2Bscreen%2Bdriver-free%2Binterface%2Celectronics%2C174&sr=1-2&th=1) |
+| FFC Ribbon Cables | 2 | $3.99 | [Micro Center](https://www.microcenter.com/product/455642/1-Meter_Flex_Cable_for_Raspberry_Pi_Camera?storeID=061) |
 
 ## How to use
 1. Make sure SnapVision is in a well-lit place.
-2. Run the main firmware at [scan.py](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py) (python) or scan.ipynb (Jupyter Lab) on the Raspberry Pi 4.
-3. Place an object to be scanned inside SnapVision and on top of its platter.
+2. Place an object to be scanned on top of SnapVision's platter.
+3. Run the main firmware at [scan.py](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.py) (python) or [scan.ipynb](https://github.com/TheAbsoluteMin/snap-vision/blob/main/firmware/scan.ipynb) (Jupyter Lab) on the Raspberry Pi 4.
 4. Fill in the firmware prompts by typing in the object's name and the number of photos to be taken.
 5. Watch SnapVision take photos, and wait until SnapVision finishes processing them with the Open Scan API.
 6. Wait for a success message and a 3D model preview of your completed scan!
@@ -124,8 +139,57 @@ Issues with space and hardware integration in the first design called for a rema
 <summary>
   <h3>B. Install Pi OS</h3>
 </summary>
-    
-If you already have Pi OS installed on your Raspberry Pi 4, you can skip this step. For more help, visit this [guide](https://github.com/TheAbsoluteMin/snap-vision/blob/main/docs/Raspberry_Pi_OS_Setup.md).
+
+1. Already have it
+If you already have the OS installed, you can skip this guide!
+
+2. Quick setup with SD card reader
+Follow the official guide at https://www.raspberrypi.com/documentation/computers/getting-started.html.
+
+3. Advanced setup without SD card reader
+Use this method if you only have a USB drive (and optionally a microSD card).
+
+    1. Download Pi OS (64 Bit)
+        - Go to the [Raspberry Pi Software Page](https://www.raspberrypi.com/software/operating-systems/).
+        - Download the 64-bit installer.
+        - You should get a download with a name similar to "raspios-trixie-arm64.img.xz"
+        <img width="1187" height="1111" alt="image" src="https://github.com/user-attachments/assets/d6bd0128-90d5-4a14-ac1d-d37a667cbfe6" />
+
+    2. Download Rufus
+        - Go to [Rufus.ie](https://rufus.ie/en/).
+        - Download the latest Windows version.
+        <img width="1251" height="924" alt="image" src="https://github.com/user-attachments/assets/e352a57c-ce10-4714-9003-5001dd96c2e4" />
+
+    3. Flash USB drive
+        - Plug a clean USB drive into your windows computer.
+        - Open Rufus.
+        - Select your USB drive under Device.
+        - Click SELECT and choose your downloaded Pi OS file.
+        - Click START.
+        - Wait for STATUS to show READY after flashing, which means it is done.
+        <img width="876" height="1026" alt="image" src="https://github.com/user-attachments/assets/a242f4f7-9973-4c9e-8cec-a510f94a8b66" />
+
+    4. Boot the Raspberry Pi 4
+        - Important: If copying data to a microSD card later, do not insert the microSD card yet.
+        - Plug the flashed USB drive into a blue USB 3.0 port.
+        - (Optional) Connect the DSI display, mouse, and keyboard into the black USB 2.0 ports, which can help with setup.
+        - Power on the Pi itself using a high-quality USB-C power cable and its USB-C port.
+        - Follow the prompts to complete your preferences setup.
+
+    5. (Optional) Copy OS to micro SD card
+        - Insert your microSD card into the Pi 4's card slot.
+        - Open the Raspberry Pi Imager application: Raspberry Pi Icon ➔ Accessories ➔ Raspberry Pi Imager.
+        - Set Device to Raspberry Pi 4.
+        - Set Operating System to Raspberry Pi OS (64-bit).
+        - Click Storage and select your micro SD card.
+        - Set your preferences.
+        - (Recommended) Enable SSH to allow wireless coding.
+        - Click Write
+        - After writing, exit out of the Raspberry Pi Imager and enter the Pi terminal.
+        - Type the command:
+            > sudo poweroff
+        - Unplug the USB flash drive and USB-C charger cable.
+        - You can now plug in power from the battery pack into the GoPiGo3 red board's barrel jack.
 </details>
 
 <details>
