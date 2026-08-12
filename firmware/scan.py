@@ -277,7 +277,7 @@ while True:
             ENV["WAYLAND_DISPLAY"] = "wayland-0"
             ENV["DISPLAY"] = ":0"
             ENV["XAUTHORITY"] = "/home/pi4/.Xauthority"
-            subprocess.Popen(["f3d", "--resolution=760,400", "--position=20,70", path_model], env=ENV)
+            subprocess.run(["f3d", "--resolution=760,400", "--position=20,70", path_model], env=ENV)
             print("Displaying 3D model!")
             break
 
