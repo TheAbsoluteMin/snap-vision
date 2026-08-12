@@ -306,7 +306,7 @@ A run of the firmware proved that my code finally worked, even when Open Scan AP
 
 <img width="1677" height="313" alt="image" src="https://github.com/user-attachments/assets/8ba5e200-8139-40ab-9ad6-eaf3f10833ac" />
 
-With some final edits to my GitHub repository, I hope I can finish SnapVision soon!
+With some final edits to my GitHub repository, SnapVision is finally finished!
 
 **Total time spent: 1.1 hour**
 
